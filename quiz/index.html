@@ -1,0 +1,751 @@
+<html class="js" lang="pt-BR" style="--announcement-bar-height: 1984px; --header-height: 7245px;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#26315e">
+  <title>Havan Para Você</title>
+  <link rel="shortcut icon" href="./images/Favicon.png" type="image/png">
+  <link rel="stylesheet" href="./css/samsung.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/checkout.css">
+
+  <style>
+    /* We load the font used for the integration with Shopify Reviews to load our own stars */
+    @font-face {
+      font-family: "font-theme-star";
+      src: url(fonts/font-theme-star.eot);
+      src: url(fonts/font-theme-star_1.eot) format("embedded-opentype"), url(fonts/font-theme-star.woff2) format("woff2"), url(fonts/font-theme-star.ttf) format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: Archivo;
+      font-weight: 600;
+      font-style: normal;
+      font-display: fallback;
+      src: url("fonts/archivo_n6.1c7c5a103e7ce5904146bdc8185bb04724ca217a.woff2") format("woff2"),
+        url("fonts/archivo_n6.73bf910681d1d187dcf6155c4f8a2c6fe79ac7be.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-style: normal;
+      font-display: fallback;
+      src: url("fonts/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2") format("woff2"),
+        url("fonts/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: Archivo;
+      font-weight: 600;
+      font-style: italic;
+      font-display: fallback;
+      src: url("fonts/archivo_i6.243682eac95afbeca7583f60c388b9a35a735280.woff2") format("woff2"),
+        url("fonts/archivo_i6.502cd191c9502df39e7033e0cdf815ae5008ab20.woff") format("woff");
+    }
+
+
+    @font-face {
+      font-family: Helvetica;
+      font-weight: 700;
+      font-style: normal;
+      font-display: fallback;
+      src: url("fonts/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2") format("woff2"),
+        url("fonts/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-style: oblique;
+      font-display: fallback;
+      src: url("fonts/helvetica_o4.f9832a0fc1ee8fc5a359636e410d6941e1e4ca03.woff2") format("woff2"),
+        url("fonts/helvetica_o4.0063286aec443697ebae04eeb9c78b820f9f7805.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: Helvetica;
+      font-weight: 700;
+      font-style: oblique;
+      font-display: fallback;
+      src: url("fonts/helvetica_o7.215fd4ca1a06214fa01e44328a1992c977700ea2.woff2") format("woff2"),
+        url("fonts/helvetica_o7.b0a2026ae2aa64d060f9ce0ee1b3c3c1aa21bf88.woff") format("woff");
+    }
+
+
+    :root {
+      --default-text-font-size: 15px;
+      --base-text-font-size: 15px;
+      --heading-font-family: Archivo, serif;
+      --heading-font-weight: 600;
+      --heading-font-style: normal;
+      --text-font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+      --text-font-weight: 400;
+      --text-font-style: normal;
+      --text-font-bolder-weight: bolder;
+      --text-link-decoration: underline;
+
+      --text-color: #373737;
+      --text-color-rgb: 55, 55, 55;
+      --heading-color: #424244;
+      --border-color: #e7e7e7;
+      --border-color-rgb: 231, 231, 231;
+      --form-border-color: #dadada;
+      --accent-color: #26315e;
+      --accent-color-rgb: 38, 49, 94;
+      --link-color: #26315e;
+      --link-color-hover: #101528;
+      --background: #ffffff;
+      --secondary-background: #ffffff;
+      --secondary-background-rgb: 255, 255, 255;
+      --accent-background: rgba(38, 49, 94, 0.08);
+      --cordabarra: #00d864;
+      --cordotexto: #ffffff;
+
+
+      --error-color: #f71b1b;
+      --error-background: rgba(247, 27, 27, 0.07);
+      --success-color: #00d864;
+      --success-background: rgba(0, 216, 100, 0.11);
+
+      --primary-button-background: #2e3c74;
+      --primary-button-background-rgb: 46, 60, 116;
+      --primary-button-text-color: #ffffff;
+      --secondary-button-background: #2e3c74;
+      --secondary-button-background-rgb: 46, 60, 116;
+      --secondary-button-text-color: #ffffff;
+
+      --footer-background: #11172b;
+      --footer-text-color: #ffffff;
+
+      --header-background: #ffffff;
+      --header-text-color: #737b97;
+      --header-light-text-color: #2e3c74;
+      --header-border-color: rgba(46, 60, 116, 0.3);
+      --header-accent-color: #2e3c74;
+
+      --flickity-arrow-color: #b4b4b4;
+      --product-on-sale-accent: #141cac;
+      --product-on-sale-accent-rgb: 20, 28, 172;
+      --product-on-sale-color: #ffffff;
+      --product-cor-do-preco: #00d864;
+      --product-cor-do-preco-riscado: #a4a9be;
+      --product-cor-dos-titles: #7a00ff;
+      --product-in-stock-color: #00d864;
+      --product-low-stock-color: #ee0000;
+      --product-sold-out-color: #d1d1d4;
+      --product-custom-label-1-background: #ff6128;
+      --product-custom-label-1-color: #ffffff;
+      --product-custom-label-2-background: #a95ebe;
+      --product-custom-label-2-color: #ffffff;
+      --product-review-star-color: #ffb647;
+
+      --mobile-container-gutter: 20px;
+      --desktop-container-gutter: 40px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./css/theme.css">
+  <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body class="warehouse--v1  template-collection " data-instant-intensity="viewport" cz-shortcut-listen="true"><iframe
+    src="about:blank" title="" role="presentation" loading="eager"
+    style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><iframe src="about:blank" title=""
+    role="presentation" loading="eager" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe>
+
+  <span class="loading-bar"></span>
+  <div id="shopify-section-popups" class="shopify-section">
+    <div data-section-id="popups" data-section-type="popups"></div>
+
+  </div>
+  <div id="shopify-section-header" class="shopify-section shopify-section__header">
+    <section data-section-id="header" data-section-type="header">
+
+      <header class="header header--inline header--search-expanded" role="banner">
+        <div class="container">
+          <div class="header__inner">
+            <div class="header__logo"><a class="header__logo-link"><img class="header__logo-image"
+                  style="max-width: 110px" width="2082" height="475" src="images/global-samsung-logo.png"
+                  alt="Samsung"></a></div>
+            <div class="header__action-list">
+
+              <div class="header__action-item" style="position: relative; height: 23px;">
+                <a class="header__action-item-link header__cart-toggle">
+                  <div class="header__action-item-content" style="display: inline-flex">
+                    <div class="header-delivery-icon icon-state">
+                      <span class="icon-state__primary"><svg class="icon icon--search" viewBox="0 0 21 21"
+                          role="presentation">
+                          <g stroke-width="2" stroke="currentColor" fill="none" fill-rule="evenodd">
+                            <path d="M19 19l-5-5" stroke-linecap="square"></path>
+                            <circle cx="8.5" cy="8.5" r="7.5"></circle>
+                          </g>
+                        </svg></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="header__action-item header__action-item--cart">
+                <a class="header__action-item-link header__cart-toggle" data-no-instant="">
+                  <div class="header__action-item-content">
+                    <div class="header__cart-icon icon-state" aria-expanded="false">
+                      <span class="icon-state__primary">
+
+                        <svg xmlns="htt../www.w3.org/2000/svg" id="Outline" viewBox="0 0 36 24" width="37"
+                          fill="var(--header-text-color)">
+                          <path
+                            d="M22.713,4.077A2.993,2.993,0,0,0,20.41,3H4.242L4.2,2.649A3,3,0,0,0,1.222,0H1A1,1,0,0,0,1,2h.222a1,1,0,0,1,.993.883l1.376,11.7A5,5,0,0,0,8.557,19H19a1,1,0,0,0,0-2H8.557a3,3,0,0,1-2.82-2h11.92a5,5,0,0,0,4.921-4.113l.785-4.354A2.994,2.994,0,0,0,22.713,4.077ZM21.4,6.178l-.786,4.354A3,3,0,0,1,17.657,13H5.419L4.478,5H20.41A1,1,0,0,1,21.4,6.178Z">
+                          </path>
+                          <circle cx="7" cy="22" r="2"></circle>
+                          <circle cx="17" cy="22" r="2"></circle>
+                        </svg>
+                      </span>
+
+                      <span class="icon-state__secondary"><svg class="icon icon--close" viewBox="0 0 19 19"
+                          role="presentation">
+                          <path
+                            d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                        </svg></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <nav class="header__mobile-nav hidden-lap-and-up">
+                <button class="header__mobile-nav-toggle icon-state touch-area" data-action="toggle-menu"
+                  aria-expanded="false" aria-haspopup="true" aria-controls="mobile-menu" aria-label="Abrir menu">
+                  <span class="icon-state__primary"><svg class="icon icon--hamburger-mobile" viewBox="0 0 20 16"
+                      role="presentation">
+                      <path d="M0 14h20v2H0v-2zM0 0h20v2H0V0zm0 7h20v2H0V7z" fill="currentColor" fill-rule="evenodd">
+                      </path>
+                    </svg></span>
+                  <span class="icon-state__secondary"><svg class="icon icon--close" viewBox="0 0 19 19"
+                      role="presentation">
+                      <path
+                        d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                    </svg></span>
+                </button>
+                <div id="mobile-menu" class="mobile-menu" aria-hidden="true"><svg
+                    class="icon icon--nav-triangle-borderless" viewBox="0 0 20 9" role="presentation">
+                    <path
+                      d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z"
+                      fill="#ffffff"></path>
+                  </svg>
+                  <div class="mobile-menu__inner">
+                    <div class="mobile-menu__panel">
+                      <div class="mobile-menu__section">
+                        <ul class="mobile-menu__nav" data-type="menu">
+                          <li class="mobile-menu__nav-item">
+                            <a class="mobile-menu__nav-link" data-type="menuitem">Televisão</a>
+                          </li>
+                          <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                              data-type="menuitem">Celular</a></li>
+                          <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                              data-type="menuitem">Notbook </a></li>
+                          <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                              data-type="menuitem">Tablet</a></li>&lt;<li></li>
+                        </ul>
+                      </div>
+                      <div class="mobile-menu__section mobile-menu__section--loose">
+                        <p class="mobile-menu__section-title heading h5">Precisa de ajuda?</p>
+                        <div class="mobile-menu__help-wrapper"><svg class="icon icon--bi-phone" viewBox="0 0 24 24"
+                            role="presentation">
+                            <g stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                              <path d="M17 15l-3 3-8-8 3-3-5-5-3 3c0 9.941 8.059 18 18 18l3-3-5-5z" stroke="#424244">
+                              </path>
+                              <path d="M14 1c4.971 0 9 4.029 9 9m-9-5c2.761 0 5 2.239 5 5" stroke="#26315e"></path>
+                            </g>
+                          </svg><span>Telefone aqui</span>
+                        </div>
+                        <div class="mobile-menu__help-wrapper"><svg class="icon icon--bi-email" viewBox="0 0 22 22"
+                            role="presentation">
+                            <g fill="none" fill-rule="evenodd">
+                              <path stroke="#26315e"
+                                d="M.916667 10.08333367l3.66666667-2.65833334v4.65849997zm20.1666667 0L17.416667 7.42500033v4.65849997z">
+                              </path>
+                              <path stroke="#424244" stroke-width="2"
+                                d="M4.58333367 7.42500033L.916667 10.08333367V21.0833337h20.1666667V10.08333367L17.416667 7.42500033">
+                              </path>
+                              <path stroke="#424244" stroke-width="2"
+                                d="M4.58333367 12.1000003V.916667H17.416667v11.1833333m-16.5-2.01666663L21.0833337 21.0833337m0-11.00000003L11.0000003 15.5833337">
+                              </path>
+                              <path d="M8.25000033 5.50000033h5.49999997M8.25000033 9.166667h5.49999997"
+                                stroke="#26315e" stroke-width="2" stroke-linecap="square"></path>
+                            </g>
+                          </svg><a href="#">E-mail
+                            aqui</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+  </div>
+
+  <main id="main" role="main" style="background-color: unset;">
+    <div id="site-content">
+      <section id="samsung-para-voce" class="samsung-para-voce__section menu-deactivator">
+        <div class="samsung-para-voce__wrapper">
+          <div class="samsung-para-voce__content">
+            <div class="samsung-para-voce__icon"><img src="./images/icone-para-voce-transparente.svg"
+                alt="Samsung Para Você"></div>
+            <h2 class="samsung-para-voce__title">A Havan Para <br class="only-desktop">Você tem muitos <br
+                class="only-desktop">brindes exclusivos</h2>
+            <p class="samsung-para-voce__text">Conheça mais e junte-se ao <br class="only-mobile">ecossistema Havan.</p>
+          </div>
+          <img src="./images/fundo-persona-para-voce.png" alt="Samsung Para Você" class="only-mobile full-width">
+        </div>
+      </section>
+    </div>
+
+
+    <div id="shopify-section-collection-template" class="shopify-section">
+      <section data-section-id="collection-template" data-section-type="collection">
+        <div class="container container--flush">
+
+          <div class="layout">
+            <div class="layout__section">
+              <div class="collection">
+                <div class="card ">
+                  <div class="title-header">
+                    <h1>RESGATE AGORA<br>A SUA RECOMPENSA</h1>
+                  </div>
+
+                  <div class="collection__dynamic-part">
+                    <div class="product-list product-list--collection product-list--with-sidebar">
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product1">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/panelas.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Buds2-Pro.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">JOGO COMPLETO 6 PANELAS BRINOX</div>
+                            <div class="product-item__title">(Restam 18 unidades)</div>
+                            <div class="product-item__color-inner">
+                              <div class="product-item__color-title">
+                                Cor: <span class="product-item__color-selected">Marrom</span>
+                              </div>
+                              <div class="product-item__color-options">
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector active"
+                                    onclick="selectColor(this, 'Branco', 'product1')">
+                                    <span style="background-color: #f1f0ed"></span>
+                                  </button>
+                                </div>
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector"
+                                    onclick="selectColor(this, 'Grafite', 'product1')">
+                                    <span style="background-color: #404145"></span>
+                                  </button>
+                                </div>
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector"
+                                    onclick="selectColor(this, 'Violeta', 'product1')">
+                                    <span style="background-color: #b2a1cd"></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 1.099,00</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product2">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Watch6-_Bluetooth_-40mm_.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Watch6-_Bluetooth_-40mm_.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">Microondas 30L 220V</div>
+                            <div class="product-item__title">(Restam 3 unidades)</div>
+                            <div class="product-item__color-inner">
+                              <div class="product-item__color-title">
+                                Cor: <span class="product-item__color-selected">Preto</span>
+                              </div>
+                              <div class="product-item__color-options">
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector active"
+                                    onclick="selectColor(this, 'Creme', 'product2')">
+                                    <span style="background-color: #f0e1b9"></span>
+                                  </button>
+                                </div>
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector"
+                                    onclick="selectColor(this, 'Grafite', 'product2')">
+                                    <span style="background-color: #404145"></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 1.439,10</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product3">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-M54-5G-128GB.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-M54-5G-128GB.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">Celular Galaxy M54 128GB</div>
+                            <div class="product-item__title">(Restam 7 unidades)</div>
+                            <div class="product-item__color-inner">
+                              <div class="product-item__color-title">
+                                Cor: <span class="product-item__color-selected">Azul</span>
+                              </div>
+                              <div class="product-item__color-options">
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector active"
+                                    onclick="selectColor(this, 'Azul', 'product3')">
+                                    <span style="background-color: #3a414a"></span>
+                                  </button>
+                                </div>
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector"
+                                    onclick="selectColor(this, 'Prata', 'product3')">
+                                    <span style="background-color: #c3c5c4"></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product-item__storage">128 GB</div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 1.709,10</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product4">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Tab-A9-_Wi-Fi_.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Tab-A9-_Wi-Fi_.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">Fritadeira Air Fryer Britânia Oven 4 em 1 BFR2100P </div>
+                            <div class="product-item__title">(Restam 9 unidades)</div>
+                            <div class="product-item__color-inner">
+                              <div class="product-item__color-title">
+                                Cor: <span class="product-item__color-selected">Preto</span>
+                              </div>
+                              <div class="product-item__color-options">
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector active"
+                                    onclick="selectColor(this, 'Grafite', 'product4')">
+                                    <span style="background-color: #404145"></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product-item__storage">127V</div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 1.349,10</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product5">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Book-Go.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Galaxy-Book-Go.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">Notebook Go Samsung 1TB HD </div>
+                            <div class="product-item__title">(Restam 14 unidades)</div>
+                            <div class="product-item__color-inner">
+                              <div class="product-item__color-title">
+                                Cor: <span class="product-item__color-selected">Prata</span>
+                              </div>
+                              <div class="product-item__color-options">
+                                <div class="product-item__color-selector">
+                                  <button class="button__option-selector active"
+                                    onclick="selectColor(this, 'Prata', 'product5')">
+                                    <span style="background-color: #c3c5c4"></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product-item__storage">128 GB</div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 1.664,10</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+
+                      <div class="product-item product-item--vertical 1/3--tablet-and-up 1/4--desk" id="product6">
+                        <div class="product-item__image-wrapper product-item__image-wrapper--with-secondary">
+                          <div class="aspect-ratio aspect-ratio--square" style="padding-bottom: 100%">
+                            <img
+                              class="product-item__primary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-media-id="32777276883104" data-sizes="auto"
+                              data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Smart-TV-50-UHD-4K-50CU7700-2023.png"><img
+                              class="product-item__secondary-image image--fade-in lazyautosizes ls-is-cached lazyloaded"
+                              data-sizes="auto" data-widths="[200,300,400,500,600,700,800]" alt="" sizes="220px"
+                              srcset="images/Smart-TV-50-UHD-4K-50CU7700-2023.png">
+                          </div>
+                        </div>
+                        <div class="product-item__info">
+                          <div class="product-item__info-inner">
+                            <div class="product-item__title">Smart TV 50" UHD 4K 50CU77002023</div>
+                            <div class="product-item__title">(Restam 3 unidades)</div>
+                            <div class="product-item__price-list price-list">
+                              <span class="price price--highlight">R$ 0,00</span>
+                              <span class="price price--compare">R$ 2.298,05</span>
+                            </div>
+                          </div>
+                          <a href="#" class="button button--resgatar">RESGATAR AGORA</a>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="mobile-collection-filters" class="drawer" aria-hidden="true">
+          <div class="drawer__inner">
+            <div class="collection-drawer">
+              <header class="collection-drawer__header">
+                <div>
+                  <button class="collection-drawer__close" data-action="close-drawer"><svg class="icon icon--close"
+                      viewBox="0 0 19 19" role="presentation">
+                      <path
+                        d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                    </svg></button>
+                  <span class="collection-drawer__title heading h3">Filtros <span
+                      class="collection-drawer__filter-count" style="display: none">(0)</span></span>
+                </div>
+
+                <button class="button button--transparent button--extra-small" data-action="clear-tags"
+                  style="display: none">Limpar</button>
+              </header>
+
+              <div class="collection-drawer__inner">
+                <p class="collection-drawer__section-title">Menu principal</p>
+
+                <div class="collection__filter-group">
+                  <button class="collection__filter-group-name text--strong" aria-expanded="false"
+                    aria-controls="filter-0" data-action="toggle-collapsible" data-close-siblings="false">Selecionar
+                    categoria<svg class="icon icon--arrow-bottom" viewBox="0 0 12 8" role="presentation">
+                      <path stroke="currentColor" stroke-width="2" d="M10 2L6 6 2 2" fill="none"
+                        stroke-linecap="square"></path>
+                    </svg></button>
+
+                  <div id="filter-0" class="collection__filter-collapsible" aria-hidden="true">
+                    <ul class="collection__filter-linklist">
+                      <li><a class="collection__filter-link link link--primary ">Televisão </a></li>
+                      <li><a class="collection__filter-link link link--primary ">Celular </a></li>
+                      <li><a class="collection__filter-link link link--primary ">Notbook </a></li>
+                      <li><a class="collection__filter-link link link--primary ">Tablet </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collection-drawer__footer">
+                <button class="button button--primary button--small button--full" data-action="close-drawer">Ver
+                  resultados</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="modal-quick-view-collection-template" class="modal" aria-hidden="true">
+          <div class="modal__dialog modal__dialog--stretch" role="dialog">
+            <button class="modal__close link" data-action="close-modal"><svg class="icon icon--close"
+                viewBox="0 0 19 19" role="presentation">
+                <path
+                  d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z"
+                  fill="currentColor" fill-rule="evenodd"></path>
+              </svg></button>
+
+            <div class="modal__loader"><svg class="icon icon--search-loader" viewBox="0 0 64 64" role="presentation">
+                <path opacity=".4"
+                  d="M23.8589104 1.05290547C40.92335108-3.43614731 58.45816642 6.79494359 62.94709453 23.8589104c4.48905278 17.06444068-5.74156424 34.59913135-22.80600493 39.08818413S5.54195825 57.2055303 1.05290547 40.1410896C-3.43602265 23.0771228 6.7944697 5.54195825 23.8589104 1.05290547zM38.6146353 57.1445143c13.8647142-3.64731754 22.17719655-17.89443541 18.529879-31.75914961-3.64743965-13.86517841-17.8944354-22.17719655-31.7591496-18.529879S3.20804604 24.7494569 6.8554857 38.6146353c3.64731753 13.8647142 17.8944354 22.17719655 31.7591496 18.529879z">
+                </path>
+                <path
+                  d="M1.05290547 40.1410896l5.80258022-1.5264543c3.64731754 13.8647142 17.89443541 22.17719655 31.75914961 18.529879l1.5264543 5.80258023C23.07664892 67.43614731 5.54195825 57.2055303 1.05290547 40.1410896z">
+                </path>
+              </svg></div>
+
+            <div class="modal__inner"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <div id="shopify-section-static-promotion-list" class="shopify-section"></div>
+    <div id="shopify-section-static-recently-viewed-products" class="shopify-section"></div>
+
+  </main>
+  <div id="shopify-section-footer" class="shopify-section">
+    <div class="container-fluid color-line" style="
+  background: #969595;
+  height: 1px;
+  width: 100%;">
+    </div>
+    <footer class="footer" data-section-id="footer" data-section-type="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__block-list">
+            <div class="footer__block-item footer__block-item--text">
+              <button class="footer__title heading" disabled="" aria-expanded="false"
+                aria-controls="block-c9a6c378-573f-4c54-9fc6-5ca6e279f3f2" data-action="toggle-collapsible">
+                <span>Produtos Serviços</span>
+                <span class="plus-button"></span>
+              </button>
+              <div class="container-fluid color-line" style="
+  background: #9695953d;
+  height: 1px;
+  width: 100%;">
+              </div>
+              <button class="footer__title heading" disabled="" aria-expanded="false"
+                aria-controls="block-c9a6c378-573f-4c54-9fc6-5ca6e279f3f2" data-action="toggle-collapsible">
+                <span>Loja Online</span>
+                <span class="plus-button"></span>
+              </button>
+              <div class="container-fluid color-line" style="
+  background: #9695953d;
+  height: 1px;
+  width: 100%;">
+              </div>
+              <button class="footer__title heading" disabled="" aria-expanded="false"
+                aria-controls="block-c9a6c378-573f-4c54-9fc6-5ca6e279f3f2" data-action="toggle-collapsible">
+                <span>Suporte</span>
+                <span class="plus-button"></span>
+              </button>
+              <div class="container-fluid color-line" style="
+background: #9695953d;
+height: 1px;
+width: 100%;">
+              </div>
+              <button class="footer__title heading" disabled="" aria-expanded="false"
+                aria-controls="block-c9a6c378-573f-4c54-9fc6-5ca6e279f3f2" data-action="toggle-collapsible">
+                <span>Quem somos</span>
+                <span class="plus-button"></span>
+              </button>
+              <div class="container-fluid color-line" style="
+background: #9695953d;
+height: 1px;
+width: 100%;">
+              </div>
+              <button class="footer__title heading" disabled="" aria-expanded="false"
+                aria-controls="block-c9a6c378-573f-4c54-9fc6-5ca6e279f3f2" data-action="toggle-collapsible">
+                <span>Sustentabilidade</span>
+                <span class="plus-button"></span>
+              </button>
+              <div class="container-fluid color-line" style="
+background: #9695953d;
+height: 1px;
+width: 100%;">
+              </div>
+            </div>
+          </div>
+          <aside class="footer__aside">
+            <div class="footer__aside-item footer__aside-item--localization">
+              <p class="hidden-pocket">Copyright© 1995-2024 HAVAN. Todos os direitos reservados.<br><br>HAVAN DA
+                AMAZONIA LTDA., com sede em Av. dos Oitis, nº 1.460, Distrito Industrial, Manaus/AM, 69.007-002,
+                inscrita no CNPJ/MF sob o nº. 00.280.273/0001-37.<br><br>Esse website é melhor visualizado nas versões
+                Microsoft Internet Explorer 11 ou superior e/ou nas últimas versões dos navegadores Google Chrome e
+                Mozilla Firefox.<br><br>Formas de pagamento aceitas: Pix, Cartão de crédito (Visa, MasterCard, Elo,
+                American Express, Diners Club, Hipercard, Elo), Cartão Samsung Itaú, Boleto bancário, Samsung Pay e
+                Picpay.<br><br><b>Brasil/Português</b></p>
+            </div>
+            <div class="footer__aside-item footer__aside-item--copyright hidden-lap-and-up">
+              <p>Copyright© 1995-2024 HAVAN. Todos os direitos reservados.<br><br>HAVAN DA AMAZONIA LTDA., com sede em
+                Av. dos Oitis, nº 1.460, Distrito Industrial, Manaus/AM, 69.007-002, inscrita no CNPJ/MF sob o nº.
+                00.280.273/0001-37.<br><br>Esse website é melhor visualizado nas versões Microsoft Internet Explorer 11
+                ou superior e/ou nas últimas versões dos navegadores Google Chrome e Mozilla Firefox.<br><br>Formas de
+                pagamento aceitas: Pix, Cartão de crédito (Visa, MasterCard, Elo, American Express, Diners Club,
+                Hipercard, Elo), Cartão Samsung Itaú, Boleto bancário, Samsung Pay e
+                Picpay.<br><br><b>Brasil/Português</b></p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
